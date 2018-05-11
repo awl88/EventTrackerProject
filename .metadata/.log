@@ -122,3 +122,12 @@ org.eclipse.core.commands.ExecutionException: Problems executing script: 'window
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-05-11 16:31:56.129
+!MESSAGE No repository found at http://download.eclipse.org/usssdk/drops/nightly/N596.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-05-11 16:53:24.029
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-05-11 16:53:24.030
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
