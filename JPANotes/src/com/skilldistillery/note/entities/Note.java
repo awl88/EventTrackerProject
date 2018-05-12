@@ -13,27 +13,28 @@ public class Note {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	private String name;
-	
-	private String title;
-	
-	private String message;
-	
-	@Enumerated(EnumType.STRING)
-	private Note note; 
-	
-	// Constructors 
-	public Note() {}
 
-	public Note(String name, String title, String message, Note note) {
+	private String name;
+
+	private String title;
+
+	private String message;
+
+	@Enumerated(EnumType.STRING)
+	private Priority priority;
+
+	// Constructors
+	public Note() {
+	}
+
+	public Note(String name, String title, String message, Priority priority) {
 		super();
 		this.name = name;
 		this.title = title;
 		this.message = message;
-		this.note = note;
+		this.priority = priority;
 	}
-	
+
 	// Getters & Setters
 	public String getName() {
 		return name;
@@ -59,22 +60,22 @@ public class Note {
 		this.message = message;
 	}
 
-	public Note getNote() {
-		return note;
+	public Priority getPriority() {
+		return priority;
 	}
 
-	public void setNote(Note note) {
-		this.note = note;
+	public void setPriority(Priority priority) {
+		this.priority = priority;
 	}
 
 	public int getId() {
 		return id;
 	}
-	
+
 	// toString
 	@Override
 	public String toString() {
-		return "Note [id=" + id + ", name=" + name + ", title=" + title + ", message=" + message + ", note=" + note
-				+ "]";
+		return "Note [id=" + id + ", name=" + name + ", title=" + title + ", message=" + message + ", priority="
+				+ priority + "]";
 	}
 }

@@ -1,4 +1,4 @@
-package com.example.note;
+package com.skilldistillery.note;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
