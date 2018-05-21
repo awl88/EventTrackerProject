@@ -23,9 +23,17 @@ repositories {
 	mavenCentral()
 }
 
+apply plugin: 'war'
+war {
+  enabled = true
+  archiveName = "${baseName}.war"     // Our app name, as defined in settings.gradle
+  destinationDir = file("./WAR")      // WAR/ folder under project root directory
+}
 
 dependencies {
 	compile project(':JPANotes')
+	
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')

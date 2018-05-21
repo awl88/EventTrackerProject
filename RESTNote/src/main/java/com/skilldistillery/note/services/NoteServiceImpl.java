@@ -31,28 +31,35 @@ public class NoteServiceImpl implements NoteService {
 	@Override
 	public Note replace(int id, Note note) {
 		Note managedNote = noteRepo.findById(id).get();
+		
 		managedNote.setName(note.getName());
+		managedNote.setTitle(note.getTitle());
+		managedNote.setMessage(note.getMessage());
+		managedNote.setPriority(note.getPriority());
+		
 		return noteRepo.saveAndFlush(managedNote);
 	}
 
 	@Override
 	public Note update(int id, Note note) {
-		if (note.getName() != null && note.getName().equals("")) {
-			return noteRepo.saveAndFlush(note);
+		Note managedNote = noteRepo.findById(id).get();
+		
+		if (note.getName() != null && !note.getName().equals("")) {
+			managedNote.setName(note.getName());
 		}
 		
-		if (note.getTitle() != null && note.getTitle().equals("")) {
-			return noteRepo.saveAndFlush(note);
+		if (note.getTitle() != null && !note.getTitle().equals("")) {
+			managedNote.setTitle(note.getTitle());
 		}
 		
-		if (note.getMessage() != null && note.getMessage().equals("")) {
-			return noteRepo.saveAndFlush(note);
+		if (note.getMessage() != null && !note.getMessage().equals("")) {
+			managedNote.setMessage(note.getMessage());
 		}
 		
 		if (note.getPriority() != null) {
-			return noteRepo.saveAndFlush(note);
+			managedNote.setPriority(note.getPriority());
 		}
-		return null;
+		return noteRepo.saveAndFlush(managedNote);
 	}
 
 	@Override
@@ -67,5 +74,4 @@ public class NoteServiceImpl implements NoteService {
 			
 		}
 	}
-
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>REST Note App</title>
+<script type="text/javascript" src="js/noteFunctions.js"></script>
+</head>
+
+<body>
+	<h1>Notes!</h1>
+	<form name="noteForm">
+		<input type="number" name="noteId">
+		<button name="lookup">Get Note by Id</button>
+	</form>
+	
+	<div id="noteData"></div>
+	<div id="noteError">
+		<h1 id = errorMsg></h1>
+	</div>
+	<div id="noteIndex"></div>
+	<form name="noteUpdate" id="noteUpdate"></form>
+	
+
+	<br>
+	<hr>
+	<br>
+	
+	<form name="newNote">
+		Your Name: <input type="text" name="name"><br> 
+		Title: <input type="text" name="title"><br> 
+		Message: <input type="text" name="message"><br> 
+		Priority: <select name="priority">
+			<option value="High">High</option>
+			<option value="Medium">Medium</option>
+			<option value="Low">Low</option>
+		</select> <br>
+
+		<button name="save">Post Message</button>
+	</form>
+
+</body>
+</html>

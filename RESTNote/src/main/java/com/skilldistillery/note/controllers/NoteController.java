@@ -55,6 +55,7 @@ public class NoteController {
 	@RequestMapping(path = "notes/{id}", method = RequestMethod.PATCH)
 	public Note update(@RequestBody Note note, @PathVariable int id) {
 		return noteServ.update(id, note);
+		
 	}
 
 	@RequestMapping(path = "notes/{id}", method = RequestMethod.DELETE)
